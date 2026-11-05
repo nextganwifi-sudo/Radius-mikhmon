@@ -1,0 +1,54 @@
+# NextGan WiFi Solution (Mikhmon v3.20) .gitignore
+# Ignore sensitive local environment and runtime files
+.env
+.env.*
+!.env.example
+*.log
+*.tmp
+*.bak
+
+# Runtime Reseller Uploads (keep directory structure and .htaccess/.gitkeep tracked)
+uploads/reseller-logos/*
+!uploads/reseller-logos/.gitkeep
+!uploads/reseller-logos/.htaccess
+uploads/reseller-templates/*/*.bak.php
+!uploads/reseller-templates/.gitkeep
+!uploads/reseller-templates/.htaccess
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Runtime configuration and credentials (application lives in mikhmonv3-upstream/)
+include/config.php
+include/github_token.txt
+include/github_repo.txt
+include/resellers.json
+include/backup_admin.json
+include/vpn_routers.json
+include/vpn_tunnels.json
+include/vpn_server_config.json
+include/radius_nas.json
+include/radius_db.json
+include/version_state.json
+/mikhmonv3-upstream/include/config.php
+/mikhmonv3-upstream/include/github_token.txt
+/mikhmonv3-upstream/include/github_repo.txt
+/mikhmonv3-upstream/include/resellers.json
+/mikhmonv3-upstream/include/backup_admin.json
+/mikhmonv3-upstream/include/vpn_routers.json
+/mikhmonv3-upstream/include/vpn_tunnels.json
+/mikhmonv3-upstream/include/vpn_server_config.json
+/mikhmonv3-upstream/include/radius_nas.json
+/mikhmonv3-upstream/include/radius_db.json
+/mikhmonv3-upstream/include/version_state.json
+/mikhmonv3-upstream/include/*.log
+/mikhmonv3-upstream/backups/*
+!/mikhmonv3-upstream/backups/.gitkeep
+/mikhmonv3-upstream/uploads/reseller-logos/*
+!/mikhmonv3-upstream/uploads/reseller-logos/.gitkeep
+!/mikhmonv3-upstream/uploads/reseller-logos/.htaccess
+/mikhmonv3-upstream/uploads/reseller-templates/*/*.bak.php
+/mikhmonv3-upstream/uploads/reseller-templates/*/*.draft.php

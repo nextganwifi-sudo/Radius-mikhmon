@@ -1,0 +1,718 @@
+# NEXTGAN WIFI SOLUTION — MIKHMON SAFE EXTENSION & PORTABLE GITHUB RELEASE
+
+## ROLE
+
+Act as a senior legacy PHP/application engineer, MikroTik RouterOS integration specialist, software architect, database migration engineer, security specialist, and GitHub release engineer.
+
+I am extending my existing MIKHMON-based application using Google AI Studio.
+
+My objective is to preserve the original MIKHMON application structure, interface, router integration, and working behavior while adding the following capabilities:
+
+1. A Used Voucher counter inside the existing Hotspot User dashboard card.
+2. Configurable Read, Write, Full, and Custom reseller permission modes.
+3. Administrator-managed permission groups.
+4. Reseller-specific templates and template-editing permissions.
+5. Reseller-specific logos and template assets.
+6. Safe user-visible rebranding to NextGan WiFi Solution.
+7. A portable, downloadable, locally installable application that can be maintained and distributed through GitHub.
+
+**This is a carefully controlled extension of the existing software, not a new application and not a redesign.**
+
+The original project is the source of truth. Inspect the real codebase before implementing anything.
+
+---
+
+# 1. ABSOLUTE RULE: PRESERVE THE ORIGINAL MIKHMON STRUCTURE
+
+The existing MIKHMON application must remain recognizable and functionally consistent with the supplied screenshots and source code.
+
+Preserve:
+
+- Existing application architecture.
+- Existing directory and file structure.
+- Existing PHP files, entry points, and routing.
+- Existing dashboard and sidebar.
+- Existing dark theme, colors, fonts, icons, cards, and layout.
+- Existing MikroTik RouterOS API integration.
+- Existing router connections and configurations.
+- Existing hotspot user and voucher functionality.
+- Existing voucher-generation workflow.
+- Existing database structure wherever possible.
+- Existing reseller authentication and management.
+- Existing admin settings.
+- Existing session handling and logout.
+- Existing language and theme settings.
+- Existing dependencies and third-party integrations.
+- Existing image assets, logo files, and image directories.
+- Existing installation and configuration mechanisms.
+
+Do not replace the application with a newly generated dashboard, a generic admin template, a new framework, or a mock implementation.
+
+Do not rewrite working modules merely to make the requested changes easier.
+
+Make the smallest compatible changes necessary.
+
+Before modifying any source code, inspect the application and prepare an implementation plan.
+
+If a requested change could compromise the existing application and cannot be implemented safely, do not apply it until the risk is resolved.
+
+---
+
+# 2. GITHUB AND PORTABLE LOCAL INSTALLATION ARE MANDATORY
+
+The application must remain a normal, portable software project that can be maintained in GitHub and downloaded for installation on another compatible local machine.
+
+It must not depend on Google AI Studio being available at runtime.
+
+It must not require a permanent AI Studio session, an undocumented cloud service, or a private development environment to operate.
+
+The existing application's actual runtime requirements must determine the installation method.
+
+Do not assume a framework, database engine, or PHP version without inspecting the project.
+
+## A. GitHub repository compatibility
+
+Prepare the project so it can be committed to a GitHub repository and downloaded as source code.
+
+A user should be able to obtain the repository using Git or GitHub's ZIP download feature and install it on a compatible local environment.
+
+Preserve the existing project structure. Do not reorganize all files into a new directory architecture just to suit GitHub.
+
+Ensure that:
+
+- Relative paths work correctly.
+- Existing asset paths remain valid.
+- Configuration paths are portable.
+- Database connection settings are configurable.
+- No machine-specific absolute paths are required.
+- No AI Studio-only runtime dependency is introduced.
+- No private development path is embedded in the application.
+- Existing installation and startup behavior remains compatible.
+
+Do not require Git to be installed on the target machine if the user downloads the ZIP and installs the required runtime dependencies manually.
+
+## B. Installation documentation
+
+Create or update a root-level README.md explaining:
+
+1. Software requirements.
+2. Compatible runtime and database versions.
+3. How to download or clone the GitHub repository.
+4. How to configure the application locally.
+5. How to create or connect the database.
+6. How to configure existing router connections.
+7. How to initialize any new database structures safely.
+8. How to set up the administrator account using the existing secure process.
+9. How to configure writable asset and data directories.
+10. How to run the application.
+11. How to upgrade an existing installation.
+12. How to back up and restore the application and its data.
+
+Use the project's actual installation requirements.
+
+Do not invent installation commands that are incompatible with the existing application.
+
+If the original project already contains installation documentation, preserve it and update only the necessary sections.
+
+## C. Configuration and secrets
+
+Keep private configuration out of GitHub.
+
+Inspect the existing configuration mechanism and adapt it safely.
+
+If appropriate for the actual project, provide an example configuration file containing placeholders rather than real credentials.
+
+Do not commit:
+
+- Real router usernames and passwords.
+- Real RouterOS API credentials.
+- Database passwords.
+- Private administrator credentials.
+- Authentication tokens.
+- Private environment configuration.
+- Sensitive production data.
+- Private backups containing credentials.
+
+Use a suitable .gitignore without excluding essential application files.
+
+Never make the application depend on a secret configuration file that cannot be recreated from documented setup instructions.
+
+## D. Existing local installations
+
+An existing local installation must continue to work after the update.
+
+The upgrade process must not overwrite the installation's live configuration, database, reseller data, template assignments, or uploaded logos.
+
+Document which files are source code and which files contain installation-specific data.
+
+If the application is distributed as a ZIP, make sure the ZIP contains the required application files while keeping private runtime data and credentials separate.
+
+Do not claim that the repository has been pushed to GitHub. Prepare the source code and documentation for me to commit and push unless an authorized GitHub integration is explicitly available and I request its use.
+
+---
+
+# 3. PRESERVE THE EXISTING IMAGES DIRECTORY
+
+The original project contains an `images/` directory holding application image assets, including existing branding and other image resources.
+
+Treat this directory as part of the original application structure.
+
+Before making changes, inspect its complete contents and determine which files are used by:
+
+- The application header.
+- Login pages.
+- Dashboard branding.
+- Existing templates.
+- Icons and other interface elements.
+- Voucher or print layouts.
+- Other existing application functions.
+
+Mandatory requirements:
+
+- Do not delete the existing images directory.
+- Do not rename it unnecessarily.
+- Do not replace its contents with newly generated files.
+- Do not overwrite existing logo assets.
+- Do not change image references without verifying all affected pages.
+- Do not rename image files merely to remove the MIKHMON name.
+- Do not assume every image is decorative; some may be used by functional templates or printing code.
+
+Preserve the original image assets and their existing paths.
+
+New assets must be added in a way that remains compatible with the current application.
+
+---
+
+# 4. RESELLER-SPECIFIC TEMPLATE AND LOGO ARCHITECTURE
+
+Each reseller must be able to receive a different template design and a different logo without changing the shared application files.
+
+Use the existing template-rendering mechanism wherever possible.
+
+Do not create a completely new rendering engine unless the existing architecture genuinely cannot support the feature.
+
+## A. Reseller identity and template assignment
+
+Every reseller must have a stable internal ID.
+
+The administrator must be able to assign:
+
+- A specific template.
+- A unique template code.
+- A reseller-specific logo.
+- Optional additional template assets, if supported.
+- Template-editing permissions.
+
+Example:
+
+Reseller A:
+- Reseller ID: 101
+- Template Code: NGW-001
+- Logo: Reseller A's assigned logo.
+
+Reseller B:
+- Reseller ID: 102
+- Template Code: NGW-002
+- Logo: Reseller B's assigned logo.
+
+Reseller C:
+- Reseller ID: 103
+- Template Code: NGW-003
+- Logo: Reseller C's assigned logo.
+
+These are illustrative examples. Use the actual reseller IDs from the existing database.
+
+Do not identify a reseller by their display name alone because the name can change.
+
+Do not treat the template code as an authentication credential.
+
+The authenticated reseller's internal identity and server-validated assignment must determine which template and logo are loaded.
+
+## B. Recommended asset resolution
+
+Use the following logical resolution order, adapted to the actual project:
+
+1. The reseller's explicitly assigned logo, if available and valid.
+2. A logo assigned to that reseller's template, if the application supports template-level assets.
+3. The existing application-wide default logo.
+
+Never replace the global default logo just because one reseller has a different logo.
+
+The final result must allow the existing application to retain its default branding while individual resellers use their own assigned branding.
+
+## C. Separate static assets from reseller-uploaded assets
+
+Preserve the existing `images/` directory for original application assets.
+
+For new reseller-specific logo uploads, first inspect whether the application already has an appropriate writable upload or asset-storage directory.
+
+If a suitable mechanism exists, extend it.
+
+If not, create a minimal separate storage location appropriate to the existing architecture, for example:
+
+`uploads/reseller-logos/{reseller_id}/logo.png`
+
+This is an illustrative storage design, not a requirement to reorganize the existing project.
+
+Use the actual reseller ID or another verified, stable identifier to resolve the asset.
+
+The original `images/` directory must remain intact.
+
+Uploaded reseller logos should not require modifying or overwriting shared source-code assets.
+
+## D. Logo management
+
+If the existing architecture permits safe asset uploads, provide administrator controls to:
+
+- Upload a reseller logo.
+- Preview the logo.
+- Assign or replace the logo.
+- Remove a custom logo and return to the default.
+- Associate a logo with a specific template if required.
+- Validate file type, file size, and image dimensions.
+
+Accept only supported image formats, such as PNG, JPEG, or WebP, according to the application's compatibility requirements.
+
+Validate uploads on the server.
+
+Do not trust the supplied filename, MIME type, or file extension alone.
+
+Generate safe server-controlled filenames and prevent path traversal or executable file uploads.
+
+Do not allow a reseller to replace another reseller's logo by manipulating a reseller ID, template code, filename, or URL.
+
+The administrator retains control over global assets and logo assignments.
+
+## E. Storage and GitHub behavior
+
+Dynamic reseller uploads must be treated as runtime data, not as modifications to the original application source.
+
+Do not automatically commit uploaded logos to GitHub.
+
+If a separate runtime upload directory is created:
+
+- Keep the required directory structure in the repository using a placeholder file if appropriate.
+- Ignore runtime uploads using a suitable .gitignore rule.
+- Ensure the application can create or use the directory after installation.
+- Document the required write permissions.
+- Document how to back up and restore uploaded logos.
+- Never overwrite the original default logo.
+
+The source repository must remain downloadable and installable even if it does not contain any production reseller uploads.
+
+When the project is installed on another machine, the original default assets must work immediately.
+
+The administrator must be able to restore reseller-specific logos from a backup or reassign them through the application.
+
+Do not promise that uploaded runtime files will automatically appear on another machine merely because the source code was downloaded from GitHub.
+
+---
+
+# 5. AUTOMATIC TEMPLATE AND LOGO LOADING
+
+Integrate template and logo resolution with the existing reseller login flow.
+
+After a reseller successfully logs in:
+
+1. Authenticate the reseller through the existing secure mechanism.
+2. Identify the reseller using the verified session or authentication token.
+3. Retrieve the reseller's saved template assignment.
+4. Resolve the authorized logo assignment.
+5. Validate that the assigned template is active and available.
+6. Load the assigned template and its appropriate logo.
+7. Apply the reseller's effective permissions.
+8. Preserve the assignment across future logins.
+
+The reseller must not manually enter a template code every time.
+
+Changing a reseller's display name must not break the template or logo assignment.
+
+If a logo is missing or invalid, use the existing default logo and handle the issue safely.
+
+If a template is missing or inactive, use the application's safe fallback behavior and report the issue to the administrator.
+
+Never silently load another reseller's template or logo.
+
+The template and logo must be resolved on the server according to the authenticated identity and authorized assignment.
+
+---
+
+# 6. DASHBOARD USED VOUCHER COUNTER
+
+Preserve the existing dashboard and its Hotspot Active and Hotspot User counters.
+
+Inside the existing Hotspot User card, add a small Used count beside the current total-user count.
+
+Example:
+
+`6 items / Used: 3`
+
+The values are examples only.
+
+Do not create a new card or button.
+
+The Used count must be calculated from the actual existing voucher activation mechanism.
+
+Inspect the voucher-generation code and the RouterOS comment-update logic.
+
+A voucher should count as Used only when its comment contains the actual expected `X` activation marker and a valid activation date in the verified existing format.
+
+Do not invent a comment format.
+
+Do not count unrelated comments, invalid dates, or unverified records.
+
+Do not count the same voucher twice.
+
+Respect the correct router context and existing reseller data-access rules.
+
+The counter must be read-only.
+
+Never modify RouterOS comments, voucher passwords, voucher profiles, user validity, or authentication behavior to support the counter.
+
+Reuse the existing RouterOS API integration.
+
+If the router is unavailable, handle the failure safely without breaking the dashboard or replacing the existing total-user count.
+
+If the marker format cannot be verified, leave the new counter disabled until the correct format has been established.
+
+---
+
+# 7. ADVANCED RESELLER PERMISSION GROUPS
+
+Preserve the existing granular reseller permission system.
+
+Organize permissions into logical categories, including:
+
+- Hotspot Users & Vouchers.
+- Hotspot Profiles & Active Sessions.
+- Network Management.
+- Logs, Reports & Monitoring.
+- Router Management.
+- PPP and other existing network services.
+- Reseller Management.
+- Template Management.
+- Administrator-only operations.
+
+Implement four reseller permission modes:
+
+- Read.
+- Write.
+- Full.
+- Custom.
+
+Read, Write, and Full must be administrator-configurable groups.
+
+Custom must display the individual permission checklist.
+
+When Read, Write, or Full is selected, hide the individual checklist in the reseller form and show a concise group summary.
+
+Allow the administrator to edit the group definitions in a separate Permission Groups section.
+
+Full must never grant unrestricted administrator privileges.
+
+The main administrator's password, administrator account, global security settings, and protected permission-group management must remain inaccessible to ordinary resellers.
+
+All sensitive permissions must be enforced by the backend.
+
+---
+
+# 8. INTEGRATE TEMPLATE PERMISSIONS INTO THE SAME SYSTEM
+
+Add template permissions to the existing permission registry or compatible permission architecture.
+
+Provide separate controls where appropriate for:
+
+- Use Assigned Template.
+- Preview Assigned Template.
+- Edit Own Assigned Template.
+- Save Own Template.
+- Publish Own Template.
+- Restore Own Template Version.
+- Assign or Change Template.
+- Manage Global Templates.
+
+Adapt identifiers to the existing application.
+
+Read, Write, and Full group definitions must be able to include or exclude appropriate reseller-facing template permissions.
+
+Custom mode must allow manual selection.
+
+A reseller who is permitted to use a template but not edit it must still be able to use the assigned design.
+
+A reseller must never be able to edit another reseller's template or logo.
+
+Hide unauthorized UI controls, but also enforce all permissions on the backend.
+
+Do not introduce a second, conflicting permission system.
+
+---
+
+# 9. SAFE BRANDING: NEXTGAN WIFI SOLUTION
+
+Update user-visible application branding to:
+
+**NextGan WiFi Solution**
+
+Before changing any name, scan the source code and classify each occurrence.
+
+Update safe, user-visible branding locations where appropriate, including:
+
+- Header and logo text.
+- Dashboard branding.
+- Login-page branding.
+- Browser document title.
+- About page.
+- Footer and other ordinary display labels.
+
+Preserve the original visual design and layout.
+
+Do not blindly replace every occurrence of MIKHMON.
+
+Keep internal identifiers unchanged unless a specific migration has been verified as safe.
+
+Protected examples include:
+
+- Filenames and entry points.
+- Database names and columns.
+- API routes.
+- Function and class names.
+- Internal configuration keys.
+- Session and authentication identifiers.
+- RouterOS script identifiers.
+- Permission identifiers.
+- Existing asset paths.
+- Third-party dependencies and compatibility-related references.
+
+Never rename the existing `images/` directory merely to reflect the new brand.
+
+The goal is safe visual rebranding while preserving application compatibility.
+
+---
+
+# 10. BACKWARD-COMPATIBLE DATABASE CHANGES
+
+Inspect the real database schema before planning migrations.
+
+Reuse existing reseller, permission, template, and configuration structures wherever possible.
+
+If new structures are necessary, add them using minimal backward-compatible migrations.
+
+Preserve:
+
+- Existing reseller IDs.
+- Existing router records.
+- Existing hotspot user and voucher records.
+- Existing credentials and authentication behavior.
+- Existing permission identifiers.
+- Existing application settings.
+- Existing template data.
+- Existing database relationships.
+
+Do not reset the database.
+
+Do not drop or recreate existing tables.
+
+Do not overwrite live configuration.
+
+Do not require a destructive migration just to implement the Used counter.
+
+Provide a rollback or restoration procedure for every necessary database migration.
+
+If an existing reseller cannot be mapped safely to the new permission model, preserve the current effective permissions until an administrator explicitly changes them.
+
+---
+
+# 11. PORTABLE INSTALLATION AND RUNTIME DATA
+
+Keep the project usable on any compatible local machine.
+
+Separate the following logical categories without unnecessarily restructuring the existing application:
+
+1. Application source code.
+2. Default static assets.
+3. Local configuration and credentials.
+4. Database and persistent application data.
+5. Reseller-specific uploaded assets.
+6. Logs and temporary files.
+
+Use the application's existing mechanisms wherever possible.
+
+If additional writable directories are necessary, document their required permissions and provide safe initialization behavior.
+
+Do not store production credentials in the source repository.
+
+Do not hardcode local absolute paths.
+
+Do not assume that the target machine has the same directory structure as the development machine.
+
+Preserve the original installation procedure and document any additional steps introduced by this extension.
+
+A fresh installation must be able to start with the default assets and a documented configuration process.
+
+An existing installation must be able to upgrade without losing its configuration, reseller data, or uploaded logos.
+
+---
+
+# 12. GITHUB RELEASE AND VERSION CONTROL
+
+Prepare the project for normal GitHub maintenance and release distribution.
+
+Before finalizing changes:
+
+- Inspect the existing Git repository state if available.
+- Preserve the original files and history.
+- Avoid unrelated file renames.
+- Avoid committing generated secrets or production data.
+- Update README.md with the new features and installation instructions.
+- Update .gitignore only where necessary.
+- Preserve required original images and application assets.
+- Document new runtime data directories.
+- Document database migration and rollback procedures.
+- Provide a concise summary of modified files.
+- Explain how to create a new Git commit and push the updated version.
+
+If a Git repository is already present, do not overwrite its configuration or rewrite its history.
+
+Do not perform force pushes, destructive Git operations, or automatic publication without explicit authorization.
+
+Do not claim to have pushed the project to GitHub unless the operation actually succeeded through an authorized tool.
+
+The resulting source code must remain suitable for GitHub download and local installation.
+
+---
+
+# 13. BACKUP AND RESTORE
+
+Before implementation, create a recoverable source-code checkpoint and database backup.
+
+Identify the files and structures that will change.
+
+Preserve the original application as a recoverable version.
+
+Back up runtime configuration, persistent data, and reseller-specific logos separately from the source repository where appropriate.
+
+A source-code download alone is not a complete backup of a production installation.
+
+Document how to restore:
+
+- Application source code.
+- Database records.
+- Local configuration.
+- Reseller-template assignments.
+- Permission-group settings.
+- Reseller-specific logo assets.
+
+Do not claim a backup or restoration succeeded unless it has been verified.
+
+If a reliable backup cannot be created in the current environment, stop before risky modifications.
+
+---
+
+# 14. IMPLEMENTATION SEQUENCE
+
+Follow this order.
+
+Phase 1 — Inspect the project structure, current application behavior, database, asset directories, router integration, voucher comment format, reseller permissions, and template mechanism.
+
+Phase 2 — Establish a backup and implementation plan.
+
+Phase 3 — Verify the Used Voucher classification logic using actual existing code and data formats.
+
+Phase 4 — Add the Used count inside the existing Hotspot User card without changing other dashboard cards.
+
+Phase 5 — Implement configurable Read, Write, Full, and Custom permission modes.
+
+Phase 6 — Integrate reseller-specific templates and template-editing permissions.
+
+Phase 7 — Implement reseller-specific logo resolution and safe asset management while preserving the existing images directory.
+
+Phase 8 — Apply safe user-visible NextGan WiFi Solution branding.
+
+Phase 9 — Prepare GitHub-compatible source files, configuration examples, documentation, and portable installation instructions.
+
+Phase 10 — Run regression, security, portability, and recovery tests.
+
+Do not perform a complete rewrite at any phase.
+
+---
+
+# 15. REQUIRED TESTS
+
+Verify the following where the available environment permits.
+
+## Existing application
+
+- Admin login still works.
+- Reseller login still works.
+- Existing router connections still work.
+- Existing voucher generation still works.
+- Existing dashboard counters retain their original meanings.
+- Existing image assets load correctly.
+- Existing permissions remain functional.
+
+## Used counter
+
+- An unused voucher is not counted.
+- A valid activated voucher with the verified marker and date is counted.
+- Invalid or unrelated comments do not produce false positives.
+- Duplicate records are not double-counted.
+- Router failures do not crash the dashboard.
+- No RouterOS comments or voucher records are modified.
+
+## Permissions and templates
+
+- Read, Write, Full, and Custom behave according to saved configurations.
+- Protected administrator operations remain inaccessible to resellers.
+- Template assignments persist across logins.
+- Each reseller receives the correct template.
+- Editing permissions are enforced on both frontend and backend.
+- Resellers cannot modify another reseller's template or logo.
+
+## Branding and assets
+
+- NextGan WiFi Solution appears in the intended user-visible locations.
+- Existing `images/` contents remain intact.
+- Existing default logos still work.
+- Reseller-specific logos resolve correctly.
+- Missing reseller logos fall back safely.
+- Uploaded assets cannot escape their authorized storage location.
+
+## GitHub and portability
+
+- No secrets are included in the release files.
+- Required application assets are included.
+- Runtime uploads are handled separately.
+- Configuration instructions are complete.
+- A fresh installation can be configured on a compatible local machine.
+- An existing installation can be upgraded without destructive changes.
+- Backup and restoration instructions are documented.
+
+Report only tests that were actually executed. Clearly identify any tests that could not be performed.
+
+---
+
+# 16. FINAL NON-NEGOTIABLE INSTRUCTIONS
+
+The existing MIKHMON application must remain the foundation.
+
+Do not redesign the application.
+
+Do not replace the existing directory structure.
+
+Do not delete or rename the original images directory.
+
+Do not change RouterOS scripts or voucher-generation logic merely to implement the Used counter.
+
+Do not blindly replace every occurrence of MIKHMON.
+
+Do not commit credentials or production data to GitHub.
+
+Do not store reseller-uploaded logos by overwriting shared default assets.
+
+Do not implement template or permission security exclusively in the frontend.
+
+Do not reset or destructively migrate the existing database.
+
+If a feature cannot be implemented safely, explain the exact limitation and leave the existing functionality intact.
+
+**START WITH PHASE 1. INSPECT THE ACTUAL SOURCE CODE, EXISTING DIRECTORY STRUCTURE, IMAGES DIRECTORY, VOUCHER COMMENT FORMAT, RESELLER PERMISSION SYSTEM, TEMPLATE SYSTEM, AND INSTALLATION PROCEDURE. REPORT THE FINDINGS AND PROPOSE THE SMALLEST SAFE IMPLEMENTATION BEFORE MODIFYING ANY FILES.**

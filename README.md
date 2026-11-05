@@ -1,11 +1,7 @@
-<div align="center">
+# NextGan WiFi Solution (Based on Mikhmon v3.20)
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+This repository contains **NextGan WiFi Solution** (built on the original **MikroTik Hotspot Monitor / Mikhmon v3.20** PHP codebase in `/mikhmonv3-upstream`).
 
-  <h1>Built with AI Studio</h2>
+For complete installation, local setup, configuration (`include/config.example.php`), Reseller Permission Modes (`Read`, `Write`, `Full`, `Custom`), Reseller Voucher Templates (`NGW-001`, `uploads/reseller-templates/`), Reseller Logo Uploads (`uploads/reseller-logos/`), Dashboard Used Voucher Counter, and RouterOS 6.x / 7.x compatibility documentation, see:
 
-  <p>The fastest path from prompt to production with Gemini.</p>
-
-  <a href="https://aistudio.google.com/apps">Start building</a>
-
-</div>
+- **[`mikhmonv3-upstream/README.md`](mikhmonv3-upstream/README.md)**

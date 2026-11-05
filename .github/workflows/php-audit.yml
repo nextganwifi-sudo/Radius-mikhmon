@@ -1,0 +1,44 @@
+name: PHP and deployment syntax audit
+
+on:
+  push:
+    branches:
+      - audit/security-performance-2026-10-27
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: none
+      - name: Lint PHP source files
+        shell: bash
+        run: |
+          set -euo pipefail
+          find mikhmonv3-upstream -type f -name '*.php' -print0 |
+            while IFS= read -r -d '' file; do
+              php -l "$file"
+            done
+      - name: Check deployment shell syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash -n mikhmonv3-upstream/deploy/vps-install.sh
+          bash -n mikhmonv3-upstream/deploy/safe-update.sh
+      - name: Check voucher result regression
+        run: php tests/voucher-result.php
+      - name: Check bulk voucher generation
+        run: |
+          php tests/voucher-batch.php
+          node tests/voucher-batch-client.mjs
+          python3 tests/voucher-batch-http.py

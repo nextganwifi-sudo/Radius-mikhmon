@@ -1,0 +1,6 @@
+{
+  "name": "Mikhmon v3 — ROS6/ROS7 Expiration & Reseller Management",
+  "description": "MikroTik Hotspot Monitor (Mikhmon v3.20) extended with universal RouterOS 6.x & 7.x expiration engine, existing-router migration, and granular reseller RBAC.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
